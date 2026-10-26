@@ -1,0 +1,29 @@
+
+public static string encryption(string s)
+{
+    s = s.Replace(" ", "");
+
+    int columns = 1;
+
+    while (columns * columns < s.Length)
+    {
+        columns++;
+    }
+
+    string result = "";
+
+    for (int i = 0; i < columns; i++)
+    {
+        for (int j = i; j < s.Length; j += columns)
+        {
+            result += s[j];
+        }
+
+        if (i < columns - 1)
+        {
+            result += " ";
+        }
+    }
+
+    return result;
+}
