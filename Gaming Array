@@ -1,0 +1,24 @@
+
+public static string gamingArray(List<int> arr)
+{
+    int max = 0;
+    int turns = 0;
+
+    foreach (int num in arr)
+    {
+        if (num > max)
+        {
+            max = num;
+            turns++;
+        }
+    }
+
+    if (turns % 2 == 0)
+    {
+        return "ANDY";
+    }
+    else
+    {
+        return "BOB";
+    }
+}
