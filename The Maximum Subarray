@@ -1,0 +1,44 @@
+
+public static List<int> maxSubarray(List<int> arr)
+{
+    int currentSum = 0;
+    int maxSum = arr[0];
+    int positiveSum = 0;
+    int largest = arr[0];
+
+    foreach (int num in arr)
+    {
+        currentSum += num;
+
+        if (currentSum > maxSum)
+        {
+            maxSum = currentSum;
+        }
+
+        if (currentSum < 0)
+        {
+            currentSum = 0;
+        }
+
+        if (num > 0)
+        {
+            positiveSum += num;
+        }
+
+        if (num > largest)
+        {
+            largest = num;
+        }
+    }
+
+    if (positiveSum == 0)
+    {
+        positiveSum = largest;
+    }
+
+    List<int> result = new List<int>();
+    result.Add(maxSum);
+    result.Add(positiveSum);
+
+    return result;
+}
