@@ -1,0 +1,15 @@
+  public static int getMinimumCost(int k, int[] c)
+{
+    Array.Sort(c);
+    Array.Reverse(c);
+
+    int total = 0;
+
+    for (int i = 0; i < c.Length; i++)
+    {
+        int multiplier = (i / k) + 1;
+        total += c[i] * multiplier;
+    }
+
+    return total;
+}
