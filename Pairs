@@ -1,0 +1,16 @@
+
+public static int pairs(int k, List<int> arr)
+{
+    HashSet<int> numbers = new HashSet<int>(arr);
+    int count = 0;
+
+    foreach (int num in arr)
+    {
+        if (numbers.Contains(num + k))
+        {
+            count++;
+        }
+    }
+
+    return count;
+}
