@@ -1,0 +1,12 @@
+public static void extraLongFactorials(int n)
+{
+    System.Numerics.BigInteger result = 1;
+
+    while (n > 1)
+    {
+        result *= n;
+        n--;
+    }
+
+    Console.WriteLine(result);
+}
